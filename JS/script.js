@@ -4,6 +4,7 @@ const dropdown = document.querySelectorAll(".dropdown");
 const hamburgerBtn = document.getElementById("hamburger");
 const navMenu = document.querySelector(".menu");
 const links = document.querySelectorAll(".dropdown a");
+const BackToTopButton = document.querySelector("#back-to-top");
 
 function setAriaExpandedFalse() {
   dropdownBtn.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
@@ -63,3 +64,38 @@ document.addEventListener("keydown", (e) => {
 });
 
 hamburgerBtn.addEventListener("click", toggleHamburger);
+
+BackToTopButton.addEventListener("click", topFunction);
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    BackToTopButton.style.display = "block";
+    //BackToTopButton.style.transition = "0.3s ease-in-out";
+  } else {
+    BackToTopButton.style.display = "none";
+    //BackToTopButton.style.transition = "0.3s ease-in-out";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+} 
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
