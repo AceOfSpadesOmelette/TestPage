@@ -316,6 +316,19 @@ button {
     padding-bottom: 0.5rem;
     border-bottom: var(--border);
   }
+
+  .introduction-section {
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 10px;
+  }
+  .introduction-text {
+    width: 100% !important;
+  }
+  
+  #index-carousel {
+    width: 100% !important;
+  }
 }
 
 /* @media (max-width: 600px) {
