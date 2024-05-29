@@ -330,6 +330,10 @@ button {
     width: 100% !important;
   }
 
+  .gallery-picture {
+    height: 200px !important;
+  }
+
   .hk-clinic-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr) !important;
