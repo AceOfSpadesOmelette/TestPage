@@ -332,18 +332,18 @@ button {
 
   .hk-clinic-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(10, 1fr) !important;
     grid-column-gap: 0px;
-    grid-row-gap: 10px;
+    grid-row-gap: 5px !important;
   } 
   
   .uk-clinic-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
     grid-column-gap: 0px;
-    grid-row-gap: 10px;
+    grid-row-gap: 5px !important;
   } 
 }
 
