@@ -353,6 +353,13 @@ button {
   .header1-text {
     width: 100% !important;
   }
+
+  .clinic-picture{
+    max-width: 100% !important;
+    max-height: 20rem;
+    object-position: center;
+    object-fit: contain;
+  }
 }
 
 /* @media (max-width: 600px) {
