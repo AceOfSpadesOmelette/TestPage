@@ -100,3 +100,25 @@ function showSlides() {
     setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
 }
+
+function scrollToTarget(event) {
+  event.preventDefault();
+  var targetId = event.target.getAttribute("href");
+  var targetElement = document.querySelector(targetId);
+  var offset = -100; // Adjust the offset value as needed
+
+  if (targetElement) {
+      var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+          top: targetPosition + offset,
+          behavior: "smooth"
+      });
+  }
+}
+
+var clinicInfoLinks = document.querySelectorAll(".clinic-info-hyperlink-btn");
+if (clinicInfoLinks) {
+  clinicInfoLinks.forEach(function(link) {
+      link.addEventListener("click", scrollToTarget);
+  })
+}
