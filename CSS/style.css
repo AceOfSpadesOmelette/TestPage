@@ -123,7 +123,7 @@ button {
 }
 
 .menu-bar .nav-link {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: -0.6px;
   padding: 0.3rem;
@@ -349,6 +349,10 @@ button {
     grid-column-gap: 0px;
     grid-row-gap: 5px !important;
   } 
+
+  .header1-text {
+    width: 100% !important;
+  }
 }
 
 /* @media (max-width: 600px) {
@@ -415,16 +419,17 @@ button {
 .header1-text {
   font-size: 24px;
   text-decoration: underline;
-  width: 80rem;
+  /* width: 80rem; */
   margin: auto;
 }
 
 .header2-text {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .contact-us-details-marker{
   padding-right: 10px;
+  padding-top: 7px;
   width: 25px;
 }
 
@@ -443,6 +448,11 @@ button {
 .clinic-info{
   margin-top: auto;
   margin-bottom: auto;
+  font-size: 20px;
+}
+
+.clinic-info-row{
+  display: flex;
 }
 
 .hk-clinic-grid {
