@@ -336,19 +336,27 @@ button {
   }
 
   .hk-clinic-grid {
-    display: grid;
+    display: flex !important;
+    flex-direction: column !important;
+    /* display: grid;
     grid-template-columns: repeat(1, 1fr) !important;
     grid-template-rows: repeat(10, 1fr) !important;
     grid-column-gap: 0px;
-    grid-row-gap: 5px !important;
-  } 
+    grid-row-gap: 5px !important; */
+  }
+
+  .hk-clinic-grid > *:nth-child(2n){
+    margin-bottom: 80px;
+  }
   
-  .uk-clinic-grid {
-    display: grid;
+  .uk-clinic-grid {    
+    display: flex !important;
+    flex-direction: column !important;
+    /* display: grid;
     grid-template-columns: repeat(1, 1fr) !important;
     grid-template-rows: repeat(2, 1fr) !important;
     grid-column-gap: 0px;
-    grid-row-gap: 5px !important;
+    grid-row-gap: 5px !important; */
   } 
 
   .header1-text {
@@ -356,11 +364,22 @@ button {
   }
 
   .clinic-picture{
-    max-width: 100% !important;
-    max-height: 20rem;
+    /* max-height: 20rem; */
     object-position: center;
     object-fit: cover;
     min-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 30% !important;
+    max-height: 30% !important;
+  }
+
+  .uk-clinic-hyperlink-wrapper > * {
+    width: 100%;
+  }
+
+  .uk-clinic-hyperlink-wrapper > * > * {
+    text-align: center;
+    display: block;
   }
 }
 
@@ -608,6 +627,20 @@ button {
 }
 
 .hk-clinic-hyperlink-wrapper > * {
+  border: 3px solid var(--brownred);
+  border-radius: 10px;
+  padding: 0px 10px 0 10px;
+}
+
+.uk-clinic-hyperlink-wrapper{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uk-clinic-hyperlink-wrapper > * {
   border: 3px solid var(--brownred);
   border-radius: 10px;
   padding: 0px 10px 0 10px;
