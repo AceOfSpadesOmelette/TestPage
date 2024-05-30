@@ -15,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Calibri", "MYSH Font";
+  font-size: 1.2rem;
 }
 
 :root {
@@ -123,7 +124,7 @@ button {
 }
 
 .menu-bar .nav-link {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.6px;
   padding: 0.3rem;
@@ -415,7 +416,7 @@ button {
 
 .section-header {
   position: relative;
-  font-size: 24px;
+  font-size: 44px;
   color: white;
   top: 40%;
   left: 5%;
@@ -425,10 +426,11 @@ button {
 }
 
 .header1-text {
-  font-size: 24px;
+  font-size: 30px;
   text-decoration: underline;
   /* width: 80rem; */
   margin: auto;
+  font-weight: 900;
 }
 
 .header2-text {
@@ -596,3 +598,18 @@ button {
 .gallery-picture{
   height: 400px;
 }
+
+.hk-clinic-hyperlink-wrapper{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hk-clinic-hyperlink-wrapper > * {
+  border: 3px solid var(--brownred);
+  border-radius: 10px;
+  padding: 0px 10px 0 10px;
+}
+
+/* .clinic-info-hyperlink-btn{} */
