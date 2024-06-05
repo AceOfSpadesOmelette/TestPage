@@ -102,6 +102,10 @@ button {
   background: var(--white);
 }
 
+.menu-bar li{
+  height: 30px;
+}
+
 .menu-bar li:first-child .dropdown {
   flex-direction: initial;
   min-width: 480px;
@@ -124,7 +128,8 @@ button {
 }
 
 .menu-bar .nav-link {
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: 0.79rem;
   font-weight: 500;
   letter-spacing: -0.6px;
   padding: 0.3rem;
@@ -192,6 +197,7 @@ button {
   border-radius: 7px;
   transition: 0.1s ease-in-out;
   text-decoration: none;
+  font-size: 0.79rem;
 }
 
 .dropdown-link p {
@@ -399,7 +405,7 @@ button {
   line-height: 2rem;
   width: 100rem;
   margin: auto;
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -466,7 +472,7 @@ button {
   left: 5%;
   width: 100rem;
   margin: auto;
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 .header1-text {
