@@ -332,7 +332,8 @@ button {
   }
 
   .gallery-picture {
-    height: 200px !important;
+    /* height: 200px !important; */
+    height: 100% !important;
   }
 
   .hk-clinic-grid {
@@ -398,7 +399,31 @@ button {
   line-height: 2rem;
   width: 100rem;
   margin: auto;
-  max-width: 90%;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1280px) {
+
+  .main-section {
+    max-width: calc(100% - 70px);
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+
+  .main-section {
+    max-width: calc(100% - 100px);
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  .main-section {
+    max-width: calc(100% - 40px);
+  }
+
 }
 
 .introduction-section{
@@ -441,7 +466,7 @@ button {
   left: 5%;
   width: 100rem;
   margin: auto;
-  max-width: 90%;
+  max-width: 1200px;
 }
 
 .header1-text {
