@@ -406,7 +406,8 @@ button {
   }
 
   .uk-clinic-hyperlink-wrapper > * {
-    width: 100%;
+    width: 170px;
+    text-align: center;
   }
 
   .uk-clinic-hyperlink-wrapper > * > * {
@@ -704,6 +705,8 @@ button {
   border: 3px solid var(--brownred);
   border-radius: 10px;
   padding: 0px 10px 0 10px;
+  width: 170px;
+  text-align: center;
 }
 
 .clinic-info-hyperlink-btn > * {
