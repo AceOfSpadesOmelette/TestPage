@@ -108,6 +108,7 @@ button {
   height: inherit;
   display: grid;
   align-items: center;
+  width: 100%;
 }
 
 .menu-bar li:first-child .dropdown {
@@ -119,9 +120,9 @@ button {
   border-right: var(--border);
 }
 
-.menu-bar li:nth-child(n + 2) ul:nth-child(1) {
+/* .menu-bar li:nth-child(n + 2) ul:nth-child(1) {
   border-bottom: var(--border);
-}
+} */
 
 .menu-bar .dropdown-link-title {
   font-weight: 600;
@@ -138,14 +139,21 @@ button {
   letter-spacing: -0.6px;
   padding: 0.3rem;
   min-width: 60px;
-  margin: 0 0.6rem;
+  /* margin: 0 0.6rem; */
   text-decoration: none;
   color: var(--brownred);
+  height: inherit;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 90px;
 }
 
 .menu-bar .nav-link:hover,
 .dropdown-link:hover {
-  color: var(--primary-color);
+  color: #ffffff;
+  background-color: var(--brownred);
+  transition: 0.2s;
 }
 
 .nav-start, .nav-end, .menu-bar, .right-container, .right-container .search {
@@ -153,7 +161,11 @@ button {
   align-items: center;
 
   height: inherit;
+
+  justify-content: right;
 }
+
+.nav-end{width: 700px;}
 
 .dropdown {
   display: flex;
@@ -162,11 +174,13 @@ button {
   background-color: var(--white);
   border-radius: 10px;
   position: absolute;
-  top: 36px;
+  /* top: 36px; */
+  top: 85px;
+  left: 302px;
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  transform: scale(0.97) translateX(-5px);
+  transform: scale(0.97) translateY(-5px);
   transition: 0.1s ease-in-out;
   box-shadow: var(--shadow);
 }
@@ -174,14 +188,14 @@ button {
 .dropdown.active {
   visibility: visible;
   opacity: 1;
-  transform: scale(1) translateX(5px);
+  transform: scale(1) translateY(5px);
 }
 
 .dropdown ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1.2rem;
+  /* padding: 1.2rem; */
   font-size: 0.95rem;
 }
 
@@ -195,11 +209,13 @@ button {
 .dropdown-link {
   display: flex;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
+  padding: 0.5rem 30px 0.5rem 30px;
   border-radius: 7px;
   transition: 0.1s ease-in-out;
   text-decoration: none;
   font-size: 0.79rem;
+  color: var(--brownred);
 }
 
 .dropdown-link p {
@@ -266,7 +282,7 @@ button {
     top: 90px;
     left: 0;
     /* min-height: 100vh; */
-    width: 100vw;
+    width: 100%;
   }
 
   .menu-bar li:first-child ul:nth-child(1) {
@@ -311,6 +327,7 @@ button {
     height: initial;
     width: 40vw;
     float: right;
+    border-radius: 0 0 0 7px;
   }
 
   .menu-bar .nav-link {
@@ -320,6 +337,7 @@ button {
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0;
+    border-radius: 7px;
   }
 
   .menu-bar li:first-child .dropdown {
@@ -552,7 +570,8 @@ button {
 #footer{
   padding-top: 35px;
   padding-bottom: 30px;
-  background: #1f2024;
+  /* background: #1f2024; */
+  background: #671f22;
   text-align: center;
 }
 
@@ -580,6 +599,7 @@ button {
   width: 30px;
   text-align: center;
   line-height: 32px;
+  box-shadow: 1px 1px 2px black;
 }
 
 #footer p.copyright {
@@ -609,6 +629,7 @@ button {
   line-height: 1.8;
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 1px 1px 2px black;
 }
 
 /* Slideshow container */
@@ -685,4 +706,16 @@ button {
   padding: 0px 10px 0 10px;
 }
 
-/* .clinic-info-hyperlink-btn{} */
+.clinic-info-hyperlink-btn > * {
+  text-decoration: none;
+  color: var(--brownred);
+}
+
+.clinic-info-hyperlink-btn:hover {
+  background-color: var(--brownred);
+}
+
+.clinic-info-hyperlink-btn:hover > * {
+  color: #ffffff;
+  transition: 0.2s;
+}
