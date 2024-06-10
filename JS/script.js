@@ -122,3 +122,39 @@ if (clinicInfoLinks) {
       link.addEventListener("click", scrollToTarget);
   })
 }
+
+window.addEventListener('scroll', function() {
+  var container = document.querySelector('#nav-menu');
+  if (window.scrollY > 0) {
+    container.classList.add('scroll-shadow');
+  } else {
+    container.classList.remove('scroll-shadow');
+  }
+});
+
+function KeepAspectRatio() {
+  // Check if the element with class .iframe-calendar exists
+  var calendarElement = document.querySelector('.iframe-calendar');
+  
+  // Check if the element with class .iframe-scheduling exists
+  var schedulingElement = document.querySelector('.iframe-scheduling');
+  
+  // Calculate and set the new height for .iframe-calendar
+  if (calendarElement) {
+    var width = calendarElement.offsetWidth;
+    var newHeight = width * 1.2;
+    calendarElement.style.height = newHeight + 'px';
+  }
+  
+  // Calculate and set the new height for .iframe-scheduling
+  if (schedulingElement) {
+    var width = schedulingElement.offsetWidth;
+    var newHeight = width * 1.2;
+    schedulingElement.style.height = newHeight + 'px';
+  }
+}
+// Call the KeepAspectRatio function when the page finishes loading
+window.addEventListener('load', KeepAspectRatio);
+
+// Call the KeepAspectRatio function when a resize event occurs
+window.addEventListener('resize', KeepAspectRatio);
