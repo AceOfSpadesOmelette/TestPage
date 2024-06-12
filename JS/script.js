@@ -147,13 +147,13 @@ function KeepAspectRatio() {
   }
 
   // Calculate and set the new height for each .iframe-scheduling element
-  if (schedulingElements) {
-    schedulingElements.forEach(function (schedulingElement) {
-      var width = schedulingElement.offsetWidth;
-      var newHeight = width * 0.6;
-      schedulingElement.style.height = newHeight + 'px';
-    });
-  }
+  // if (schedulingElements) {
+  //   schedulingElements.forEach(function (schedulingElement) {
+  //     var width = schedulingElement.offsetWidth;
+  //     var newHeight = width * 0.6;
+  //     schedulingElement.style.height = newHeight + 'px';
+  //   });
+  // }
 }
 
 // Call the KeepAspectRatio function when the page finishes loading
@@ -189,3 +189,16 @@ function UpdateMonthNumber() {
 window.addEventListener('load', function() {
   UpdateMonthNumber();
 });
+
+function ToggleArrowIcon() {
+  const buttons = document.querySelectorAll('.dropdown-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const arrowIcon = button.querySelector('i');
+      arrowIcon.classList.toggle('fa-angle-down');
+      arrowIcon.classList.toggle('fa-angle-up');
+    });
+  });
+}
+ToggleArrowIcon();
