@@ -171,3 +171,18 @@ for (var i = 0; i < accordionElements.length; i++) {
     }
   });
 }
+
+function UpdateMonthNumber() {
+  var monthNumberElement = document.querySelector('#current-month-number');
+  
+  if (monthNumberElement) {
+    var currentDate = new Date();
+    var gmt8MonthNumber = currentDate.getUTCMonth() + 1; // Adding 1 because getUTCMonth() returns a zero-based index
+    
+    monthNumberElement.textContent = gmt8MonthNumber;
+  }
+}
+// Call the function when the page has finished loading
+window.addEventListener('load', function() {
+  UpdateMonthNumber();
+});
