@@ -142,14 +142,14 @@ function KeepAspectRatio() {
   // Calculate and set the new height for .iframe-calendar
   if (calendarElement) {
     var width = calendarElement.offsetWidth;
-    var newHeight = width * 1.2;
+    var newHeight = width * 1.0;
     calendarElement.style.height = newHeight + 'px';
   }
   
   // Calculate and set the new height for .iframe-scheduling
   if (schedulingElement) {
     var width = schedulingElement.offsetWidth;
-    var newHeight = width * 1.2;
+    var newHeight = width * 1.0;
     schedulingElement.style.height = newHeight + 'px';
   }
 }

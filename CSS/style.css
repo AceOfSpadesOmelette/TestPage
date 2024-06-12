@@ -21,7 +21,6 @@
 :root {
   --dark-grey: #333333;
   --medium-grey: #636363;
-  --light-grey: #eeeeee;
   --ash: #f4f4f4;
   --primary-color: #2b72fb;
   --white: white;
@@ -32,6 +31,8 @@
   --brown: #B2817C;
 	--darkred: #CB5053;
 	--brownred: #822125;
+  --lightbrownred: #f0c7c9;
+  --snowwhite: #eeeeee;
 }
 
 ::selection {
@@ -99,7 +100,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   column-gap: 2rem;
   height: 90px;
@@ -225,6 +226,18 @@ button {
   gap: 0.5rem;
   /* padding: 0.5rem 0; */
   padding: 0.5rem 30px 0.5rem 30px;
+  border-radius: 7px;
+  transition: 0.1s ease-in-out;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--brownred);
+}
+
+.index-dropdown-link {
+  display: flex;
+  gap: 0.5rem;
+  /* padding: 0.5rem 0; */
+  padding: 0.5rem 0 0.5rem 0;
   border-radius: 7px;
   transition: 0.1s ease-in-out;
   text-decoration: none;
@@ -379,7 +392,11 @@ button {
 
   .gallery-picture {
     /* height: 200px !important; */
-    height: 100% !important;
+    /* height: 100% !important; */
+    min-width: 90% !important;
+    max-width: 90% !important;
+    min-height: 40vh !important;
+    max-height: 40vh !important;
   }
 
   .hk-clinic-grid {
@@ -452,7 +469,7 @@ button {
   /* width: 100rem; */
   width: inherit;
   margin: auto;
-  max-width: 1600px;
+  max-width: 1200px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -494,7 +511,10 @@ button {
 }
 
 #index-carousel {
-  width: 45%;
+  /* width: 45%; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .section-container {
@@ -523,7 +543,20 @@ button {
   left: 5%;
   width: 100rem;
   margin: auto;
-  max-width: 1600px;
+  max-width: 1200px;
+}
+
+.super-header {
+  font-size: 2rem;
+  /* text-decoration: underline;
+  width: 80rem; */
+  margin: auto;
+  font-weight: 900;
+  line-height: 4rem;
+  color: var(--brownred);
+  border-left: 5px solid var(--brownred);
+  background: var(--lightbrownred);
+  padding-left: 1rem;
 }
 
 .header1-text {
@@ -533,10 +566,28 @@ button {
   margin: auto;
   font-weight: 900;
   line-height: 4rem;
+  color: var(--brownred);
 }
 
 .header2-text {
   font-size: 1.75rem;
+  color: var(--brownred);
+}
+
+.header3-text {
+  font-size: 1.75rem;
+  text-decoration: underline;
+  font-weight: 500;
+  line-height: 4rem;
+  color: var(--brownred);
+  margin-top: 2.5rem;
+}
+
+.header4-text {
+  font-size: 1.5rem;
+  line-height: 4rem;
+  color: var(--brownred);
+  margin-top: 2rem;
 }
 
 .section-text {
@@ -624,7 +675,6 @@ button {
 
 #footer a {
   color: #fff;
-  font-family: MontserratRegular;
 }
 
 #footer a i {
@@ -643,6 +693,16 @@ button {
   font-size: 1rem;
   padding-top: 20px;
 }
+
+.footer-privacy-policy{
+  color: #fff;
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+/* .footer-privacy-policy > * {  
+  text-decoration: none;
+} */
 
 #back-to-top {
   position: fixed;
@@ -760,14 +820,14 @@ button {
 
 .iframe-calendar{
   border: 0;
-  width: 75%;
+  width: 50%;
   /* width: 65%; */
   height: 800px;
 }
 
 @media screen and (max-width: 1280px) {
   .iframe-calendar {
-    width: 75%;
+    width: 50%;
   }
 }
 
@@ -1041,7 +1101,7 @@ button {
 }
 
 .accordion {
-	background-color: #efefef;
+	background-color: #F8F8FF;
 	color: var(--brownred);
 	cursor: pointer;
 	padding: 9px;
@@ -1055,7 +1115,7 @@ button {
 
 .accordion-active, .accordion:hover {
 	background-color: var(--brownred);
-  color: #efefef;
+  color: #F8F8FF;
 }
 
 .accordion:after {
@@ -1074,7 +1134,7 @@ button {
 .accordion-panel {
 	padding: 0 2rem 0 2rem;
 	display: none;
-	background-color: #eeeeee;
+	background-color: var(--snowwhite);
 	overflow: hidden;
 }
 
@@ -1132,4 +1192,14 @@ button {
   .index-clinic-hyperlink-wrapper > * {
     width: 100% !important;
   }
+}
+
+.body-text {
+  font-size: 1.3rem;
+  margin: 1rem 0 1rem 0;
+  line-height: 2.5rem;
+}
+
+.privacy-policy-ol{
+  margin-left: 1.2rem;
 }
