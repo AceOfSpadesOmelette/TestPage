@@ -133,26 +133,29 @@ window.addEventListener('scroll', function() {
 });
 
 function KeepAspectRatio() {
-  // Check if the element with class .iframe-calendar exists
-  var calendarElement = document.querySelector('.iframe-calendar');
-  
-  // Check if the element with class .iframe-scheduling exists
-  var schedulingElement = document.querySelector('.iframe-scheduling');
-  
-  // Calculate and set the new height for .iframe-calendar
-  if (calendarElement) {
-    var width = calendarElement.offsetWidth;
-    var newHeight = width * 1.0;
-    calendarElement.style.height = newHeight + 'px';
+  // Get all elements with class .iframe-calendar or .iframe-scheduling
+  var calendarElements = document.querySelectorAll('.iframe-calendar');
+  var schedulingElements = document.querySelectorAll('.iframe-scheduling');
+
+  // Calculate and set the new height for each .iframe-calendar element
+  if (calendarElements) {
+    calendarElements.forEach(function (calendarElement) {
+      var width = calendarElement.offsetWidth;
+      var newHeight = width * 0.8;
+      calendarElement.style.height = newHeight + 'px';
+    });
   }
-  
-  // Calculate and set the new height for .iframe-scheduling
-  if (schedulingElement) {
-    var width = schedulingElement.offsetWidth;
-    var newHeight = width * 1.0;
-    schedulingElement.style.height = newHeight + 'px';
+
+  // Calculate and set the new height for each .iframe-scheduling element
+  if (schedulingElements) {
+    schedulingElements.forEach(function (schedulingElement) {
+      var width = schedulingElement.offsetWidth;
+      var newHeight = width * 0.6;
+      schedulingElement.style.height = newHeight + 'px';
+    });
   }
 }
+
 // Call the KeepAspectRatio function when the page finishes loading
 window.addEventListener('load', KeepAspectRatio);
 // Call the KeepAspectRatio function when a resize event occurs

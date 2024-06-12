@@ -820,15 +820,16 @@ button {
 
 .iframe-calendar{
   border: 0;
-  width: 50%;
-  /* width: 65%; */
+  /* width: 50%; */
+  width: 100%;
   height: 800px;
   margin-top: 2rem;
 }
 
 @media screen and (max-width: 1280px) {
   .iframe-calendar {
-    width: 50%;
+    /* width: 50%; */
+    width: 100%;
   }
 }
 
@@ -1214,4 +1215,37 @@ button {
   width: 100rem;
   margin: auto;
   max-width: 1200px;
+}
+
+.booking-info-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-info-clinic-name{
+  width: 100%;
+  font-size: 2rem;
+}
+
+.booking-info-clinic-contact-wrapper{
+  display: flex;
+}
+
+.booking-info-row{
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.booking-info-row > * {
+  font-size: 1.3rem;
+}
+
+.contact-us-details-marker-booking{
+  padding-right: 1rem;
+  padding-top: 7px;
+  /* width: 1.5rem; */
+}
+
+.te-t, .te-s, .rb-ni {
+  font-size: 1rem;
 }
