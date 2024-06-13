@@ -248,7 +248,7 @@ button {
   border-radius: 7px;
   transition: 0.1s ease-in-out;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--brownred);
   justify-content: center;
 }
@@ -305,6 +305,11 @@ button {
   padding: 0.1rem;
   margin-left: 1rem;
   font-size: 1.9rem;
+}
+
+.gallery-picture {
+  min-width: 400px;
+  max-width: 400px;
 }
 
 @media (max-width: 1100px) {
@@ -407,9 +412,9 @@ button {
     /* height: 200px !important; */
     /* height: 100% !important; */
     min-width: 90% !important;
-    max-width: 90% !important;
-    min-height: 40vh !important;
-    max-height: 40vh !important;
+    /* max-width: 90% !important; */
+    /* min-height: 40vh !important;
+    max-height: 40vh !important; */
   }
 
   .hk-clinic-grid {
@@ -820,6 +825,7 @@ button {
 .clinic-info-hyperlink-btn > * {
   text-decoration: none;
   color: var(--brownred);
+  font-size: 1.2rem;
 }
 
 .clinic-info-hyperlink-btn:hover {
