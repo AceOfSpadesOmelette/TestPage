@@ -23,7 +23,7 @@
   --medium-grey: #636363;
   --ash: #f4f4f4;
   --primary-color: #2b72fb;
-  --white: white;
+  --white: #ffffff;
   --border: 1px solid var(--light-grey);
   --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -361,7 +361,7 @@ button {
     align-items: stretch;
     row-gap: 1rem;
     padding: 1rem;
-    background-color: #eaeaea;
+    background-color: var(--ash);
     max-height: 40vh;
     overflow-y: scroll;
     scrollbar-width: thin;
