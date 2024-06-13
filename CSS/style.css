@@ -253,6 +253,12 @@ button {
   justify-content: center;
 }
 
+.index-dropdown-link:hover {
+  background-color: var(--brownred);
+  color: #ffffff;
+  transition: 0.2s;
+}
+
 .dropdown-link p {
   font-size: 1rem;
   color: var(--medium-grey);
@@ -1209,7 +1215,7 @@ button {
 .index-clinic-hyperlink-wrapper > * {
   border: 3px solid var(--brownred);
   border-radius: 1rem;
-  padding: 0px 1rem 0 1rem;
+  /* padding: 0px 1rem 0 1rem; */
   width: 30%;
 }
 

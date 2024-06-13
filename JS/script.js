@@ -141,7 +141,9 @@ function KeepAspectRatio() {
   if (calendarElements) {
     calendarElements.forEach(function (calendarElement) {
       var width = calendarElement.offsetWidth;
-      var newHeight = width * 0.8;
+      var height = calendarElement.offsetWidth;
+      if(width >= height){var newHeight = width * 0.8;}
+      else{var newHeight = width * 1.2;}
       calendarElement.style.height = newHeight + 'px';
     });
   }
