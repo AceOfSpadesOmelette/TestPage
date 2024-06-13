@@ -191,7 +191,7 @@ button {
   position: absolute;
   /* top: 36px; */
   top: 85px;
-  left: 302px;
+  left: 295px;
   z-index: 1;
   visibility: hidden;
   opacity: 0;
@@ -231,6 +231,7 @@ button {
   text-decoration: none;
   font-size: 1rem;
   color: var(--brownred);
+  justify-content: center;
 }
 
 @media (max-width: 1100px) {
@@ -608,6 +609,12 @@ button {
   margin-top: 2rem;
 }
 
+.brownred-text{
+  color: var(--brownred);
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
 .section-text {
   font-size: 1.2rem;
 }
@@ -643,6 +650,10 @@ button {
 
 .clinic-info-row{
   display: flex;
+}
+
+.clinic-info-row > * {
+  font-size: 1.2rem;
 }
 
 .hk-clinic-grid {
@@ -912,9 +923,26 @@ button {
   padding-left: 15px;
 }
 
+.about-doctor-text > ul > li {
+  font-size: 1.2rem;
+}
+
+.about-doctor-text-description {
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+.about-doctor-text-description > p {
+  font-size: 1.2rem;
+}
+
 .news-and-articles-ul {
   list-style: initial;
   padding-left: 15px;
+}
+
+.news-link > a{
+  font-size: 1.2rem;
 }
 
 .news-and-articles-ul > li > * {
