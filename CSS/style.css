@@ -650,6 +650,7 @@ button {
 
 .clinic-info-row{
   display: flex;
+  font-size: 1.2rem;
 }
 
 .clinic-info-row > * {
@@ -1014,6 +1015,16 @@ button {
   flex-direction: column;
 }
 
+.uk-clinic-wrapper{
+  display: flex;
+  flex-direction: row;
+  column-gap: 5%;
+}
+
+.uk-clinic-wrapper > .clinic-wrapper {
+  width: 50%;
+}
+
 .about-clinic-text{
   width: 50%;
   display: block;
@@ -1201,7 +1212,7 @@ button {
 }
 
 .accordion-panel {
-	padding: 0 2rem 0 2rem;
+	padding: 0 1rem 0 1rem;
 	display: none;
 	background-color: var(--snowwhite);
 	overflow: hidden;
