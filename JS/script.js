@@ -204,3 +204,24 @@ function ToggleArrowIcon() {
   });
 }
 ToggleArrowIcon();
+
+
+function redirectToIndex() {
+  var currentURL = window.location.href; // Get the current URL
+  var subpage = currentURL.split('/').pop(); // Get the last part of the URL
+  var indexURL = currentURL.replace(subpage, 'index.html'); // Replace the last part with 'index.html'
+
+  // Check if the subpage exists
+  fetch(subpage)
+    .then(function(response) {
+      if (response.status !== 200) { // If the subpage does not exist
+        window.location.href = indexURL; // Redirect to index.html
+      }
+    })
+    .catch(function(error) {
+      console.log('Error:', error);
+    });
+}
+
+// Call the function when the page loads
+window.onload = redirectToIndex;
