@@ -1017,12 +1017,7 @@ button {
 
 .uk-clinic-wrapper{
   display: flex;
-  flex-direction: row;
-  column-gap: 5%;
-}
-
-.uk-clinic-wrapper > .clinic-wrapper {
-  width: 50%;
+  flex-direction: column;
 }
 
 .about-clinic-text{
