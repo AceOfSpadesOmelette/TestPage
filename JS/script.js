@@ -64,10 +64,8 @@ document.addEventListener("keydown", (e) => {
 
 hamburgerBtn.addEventListener("click", toggleHamburger);
 
-BackToTopButton.addEventListener("click", topFunction);
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     BackToTopButton.style.display = "block";
@@ -78,11 +76,36 @@ function scrollFunction() {
   }
 }
 
+// Attach the function to your button or link element
+BackToTopButton.addEventListener("click", topFunction);
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-} 
+function topFunction(event) {
+    event.preventDefault();
+    var targetPosition = 0;
+    var start = window.pageYOffset;
+    var distance = targetPosition - start;
+    var duration = Math.min(1000, Math.abs(distance));
+  
+    var startTime = null;
+    function scrollAnimation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      var elapsed = currentTime - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var easeProgress = easeInOutCubic(progress);
+      var scrollY = start + distance * easeProgress;
+  
+      document.documentElement.scrollTop = scrollY;
+      document.body.scrollTop = scrollY;
+  
+      if (elapsed < duration) {
+        requestAnimationFrame(scrollAnimation);
+      }
+    }  
+    requestAnimationFrame(scrollAnimation);
+}  
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+}
 
 let slideIndex = 0;
 showSlides();
@@ -102,19 +125,18 @@ function showSlides() {
 }
 
 function scrollToTarget(event) {
-  event.preventDefault();
-  var targetId = event.target.getAttribute("href");
-  var targetElement = document.querySelector(targetId);
-  var offset = -100; // Adjust the offset value as needed
-
-  if (targetElement) {
-      var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-          top: targetPosition + offset,
-          behavior: "smooth"
-      });
+    event.preventDefault();
+    var targetId = event.target.getAttribute("href");
+    var targetElement = document.querySelector(targetId);
+    var offset = -100; // Adjust the offset value as needed  
+    if (targetElement) {
+        var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: targetPosition + offset,
+            behavior: "smooth"
+        });
+    }
   }
-}
 
 var clinicInfoLinks = document.querySelectorAll(".clinic-info-hyperlink-btn");
 if (clinicInfoLinks) {
