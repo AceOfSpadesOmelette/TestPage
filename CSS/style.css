@@ -1333,3 +1333,17 @@ button {
 .hk-clinic-calendar-wrapper {
   padding-bottom: 5rem;
 }
+
+.calendar-img-wrapper{
+  width: 60%;
+  padding-top: 1.5rem;
+  margin: auto;
+}
+
+@media (max-width: 980px) {
+  .calendar-img-wrapper{width: 100% !important;}
+}
+
+.calendar-img{
+  width: 100%;
+}
