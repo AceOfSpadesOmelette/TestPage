@@ -1,144 +1,1356 @@
-<!DOCTYPE html>
-<html lang="en">
+/*
+ Theme Name: TaiWoTong
+ Author: AceOfSpadesOmelette
+ Version: 1.0
+ */
 
+@font-face {
+	font-family: "Calibri";
+	font-weight: normal;
+	src: url("../fonts/calibri.ttf") format("truetype");
+}
 
-<head>
-    <title>泰和堂中醫診所</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link rel="icon" type="image/png" href="../assets/TaiWoTong_WhiteInners.png">
-    <meta name="author" content="AceOfSpadesOmelette">
-    <meta name="description" content="泰和堂中醫診所">
-    <meta name="keywords" content="泰和堂中醫診所, taiwotong, tai wo tong, medical clinic">
+@font-face {
+	font-family: "MYSH Font";
+	src: url('../fonts/chinese.msyh.ttf') format("truetype");
+	unicode-range: U+4E00-9FFF;
+}
 
-    <link rel="stylesheet" href="../CSS/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" id="DefaultCSS" type="text/css" href="../CSS/style.css">
-</head>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Calibri", "MYSH Font";
+  font-size: 14px;
+}
 
-<body>
-    <header id="nav-menu" aria-label="navigation bar">
-        <div class="container">
-            <div class="nav-start">
-                <a class="logo" href="../home">
-                    <img src="../assets/TaiWoTong_Full.png" width="35" height="35" alt="泰和堂中醫診所" class="site-logo" />
-                </a>
+:root {
+  --dark-grey: #333333;
+  --medium-grey: #636363;
+  --ash: #f4f4f4;
+  --primary-color: #2b72fb;
+  --white: #ffffff;
+  --border: 1px solid var(--light-grey);
+  --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
-            </div>
-            <div class="nav-end">
-                <div class="right-container">
-                    <nav class="menu">
-                        <ul class="menu-bar">
-                            <li><a class="site-navigation-text nav-link" href="../home">首頁</a></li>
-                            <li><a class="site-navigation-text nav-link nav-selected"
-                                    href="../about-us">關於診所</a></li>
-                            <li><a class="site-navigation-text nav-link"
-                                    href="../our-services">服務簡介</a>
-                            </li>
-                            <li><a class="site-navigation-text nav-link"
-                                    href="../our-doctors">醫師簡介</a>
-                            </li>
-                            <li>
-                                <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-haspopup="true"
-                                    aria-expanded="false" aria-label="discover">
-                                    診症預約&nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </button>
-                                <div id="dropdown2" class="dropdown">
-                                    <ul role="menu">
-                                        <!-- <li><span class="dropdown-link-title">診症預約</span></li> -->
-                                        <li role="menuitem">
-                                            <a class="dropdown-link"
-                                                href="../hk-clinic-booking">香港應診時間表</a>
-                                        </li>
-                                        <li role="menuitem">
-                                            <a class="dropdown-link"
-                                                href="../uk-clinic-booking">英國診症預約</a>
-                                        </li>
-                                        <li role="menuitem">
-                                            <a class="dropdown-link"
-                                                href="../remote-clinic-booking">遙距診症預約</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a class="site-navigation-text nav-link"
-                                    href="../news-and-articles">資訊與報導</a>
-                            </li>
-                            <!-- <li><a class="nav-link"
-                                    href="https://www.taiwotonghk.com/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/">最新消息</a>
-                            </li> -->
-                            <li><a class="nav-link"
-                                    href="../contact-us">分店網絡</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+  --brown: #B2817C;
+	--darkred: #CB5053;
+	/* --brownred: #822125;
+  --lightbrownred: #f0c7c9; */
+  --brownred: #009688;
+  --lightbrownred: #92fff4;
+  --snowwhite: #eeeeee;
+  --lightblue: #0693e3;
+}
 
-                <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-bars" aria-hidden="true" id="hamburger-icon"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+::selection {
+  background: var(--brownred);
+  color: white;
+}
 
-    <div class="section-container component-wrapper">
-        <div class="section-image"
-            style="background-image: url('../assets/medicine.jpeg');">
-            <div class="overlay"></div>
-            <div class="section-header">關於診所</div>
-        </div>
-    </div>
-    <div class="main-section">
-      <div class="introduction-section">
-        <div class="introduction-text">
-            <span class="header1-text">簡介</span><br><br>
-          <p class="section-text">泰和堂中醫診所由香港中醫藥管理委員會之註冊中醫師開設。</p><br>
-          <p class="section-text">泰和堂的「泰」取自「泰卦」– 乾坤陰陽交通之象，天地相交，陰陽相合則萬物資生 ，萬物資茂則天地安和，代表陰陽通達，身體陰陽調順；「和」則代表五臟六腑安和，有生生不息之意。「泰和」突顯中醫核心精神—陰陽調和。本診所以此為盼，本著濟世扶危，專業關懷為宗旨，歇力為普羅大眾提供最優質可靠之中醫醫療服務。</p><br>
-          <p class="section-text">本診所提供內科、兒科、皮膚科、婦科等全科服務，並應用農本方中藥免煎沖劑，以電子化病歷進行記錄，致力提供現代化中醫服務以方便市民大眾。另外，本診所設有針灸、艾灸、拔罐、梅花針、耳穴及骨傷推拿等服務，亦配備中藥手工皂、中藥足浴包等外用藥，務求以多元化方式為大眾提供治療。</p>
-        </div>
+body {
+  font-family: inherit;
+  background-color: var(--white);
+  color: var(--dark-grey);
+  letter-spacing: -0.4px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* a {
+  text-decoration: none;
+  color: inherit;
+} */
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.btn {
+  display: block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.icon {
+  padding: 0.5rem;
+  background-color: var(--light-grey);
+  border-radius: 10px;
+}
+
+.logo {
+  margin-right: 1.5rem;
+}
+
+#nav-menu {
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+}
+
+.scroll-shadow {
+  box-shadow: 0 0 8px #ccc;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  column-gap: 2rem;
+  height: 90px;
+  padding: 1.2rem 3rem;
+}
+
+.menu {
+  position: relative;
+  background: var(--white);
+  height: inherit;
+}
+
+.menu-bar li{
+  /* height: 30px; */
+  height: inherit;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.menu-bar li:first-child .dropdown {
+  flex-direction: initial;
+  min-width: 480px;
+}
+
+.menu-bar li:first-child ul:nth-child(1) {
+  border-right: var(--border);
+}
+
+/* .menu-bar li:nth-child(n + 2) ul:nth-child(1) {
+  border-bottom: var(--border);
+} */
+
+.menu-bar .dropdown-link-title {
+  font-weight: 600;
+}
+
+.site-navigation-text {
+  text-decoration: none;
+}
+
+.menu-bar .nav-link {
+  /* font-size: 1rem; */
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  padding: 0.3rem;
+  min-width: 60px;
+  /* margin: 0 0.6rem; */
+  text-decoration: none;
+  color: var(--brownred);
+  height: inherit;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+}
+
+.menu-bar .nav-link:hover,
+.dropdown-link:hover {
+  color: #ffffff;
+  background-color: var(--brownred);
+  transition: 0.2s;
+}
+
+.nav-selected {
+  color: #ffffff !important;
+  background-color: var(--brownred);
+}
+
+.nav-start, .nav-end, .menu-bar, .right-container, .right-container .search {
+  display: flex;
+  align-items: center;
+
+  height: inherit;
+
+  justify-content: right;
+}
+
+.nav-end{width: 700px;}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 230px; */
+  background-color: var(--white);
+  border-radius: 10px;
+  position: absolute;
+  /* top: 36px; */
+  top: 85px;
+  left: -74px;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.97) translateY(-5px);
+  transition: 0.1s ease-in-out;
+  box-shadow: var(--shadow);
+  width: 180%;
+}
+
+.dropdown.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateY(5px);
+}
+
+.dropdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* padding: 1.2rem; */
+  font-size: 0.95rem;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.15rem;
+}
+
+.dropdown-link {
+  display: flex;
+  gap: 0.5rem;
+  /* padding: 0.5rem 0; */
+  padding: 0.5rem 30px 0.5rem 30px;
+  border-radius: 7px;
+  transition: 0.1s ease-in-out;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--brownred);
+  /* justify-content: center; */
+}
+
+@media (max-width: 1100px) {
+  .dropdown-link{
+    padding: 0.5rem 0 0.5rem 0 !important;
+    /* justify-content: center; */
+    font-size: 1rem !important;
+  }
+}
+
+.index-dropdown-link {
+  display: flex;
+  gap: 0.5rem;
+  /* padding: 0.5rem 0; */
+  padding: 0.5rem 0 0.5rem 0;
+  border-radius: 7px;
+  transition: 0.1s ease-in-out;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--brownred);
+  justify-content: center;
+}
+
+.index-dropdown-link:hover {
+  background-color: var(--brownred);
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.dropdown-link p {
+  font-size: 1rem;
+  color: var(--medium-grey);
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  text-align: center;
+  height: inherit;
+}
+
+.right-container .search {
+  position: relative;
+}
+
+.right-container img {
+  border-radius: 50%;
+}
+
+.search input {
+  background-color: var(--ash);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem;
+  padding-left: 2.4rem;
+  font-size: 16px;
+  width: 100%;
+  border: var(--border);
+}
+
+.search .bx-search {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-size: 1.3rem;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
+
+#hamburger {
+  display: none;
+  padding: 0.1rem;
+  margin-left: 1rem;
+  font-size: 1.9rem;
+}
+
+.gallery-picture {
+  min-width: 400px;
+  max-width: 400px;
+}
+
+@media (max-width: 1100px) {
+  #hamburger {
+    display: block;
+  }
+
+  .container {
+    padding: 1.2rem;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    /* top: 87px; */
+    top: 90px;
+    left: 0;
+    /* min-height: 100vh; */
+    width: 100%;
+  }
+
+  .menu-bar li:first-child ul:nth-child(1) {
+    border-right: none;
+    border-bottom: var(--border);
+  }
+
+  .dropdown {
+    display: none;
+    min-width: 100%;
+    border: none !important;
+    border-radius: 5px;
+    position: static;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    width: initial !important;
+  }
+
+  .menu.show,
+  .dropdown.active {
+    display: block;
+    background-color: rgba(234, 234, 234, 0%);
+  }
+
+  .dropdown ul {
+    padding-left: 0.3rem;
+  }
+
+  .menu-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 1rem;
+    padding: 1rem;
+    background-color: var(--ash);
+    max-height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    height: initial;
+    width: 40vw;
+    float: right;
+    border-radius: 0 0 0 7px;
+  }
+
+  .menu-bar .nav-link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* font-weight: 600; */
+    font-size: 1.2rem;
+    margin: 0;
+    border-radius: 7px;
+  }
+
+  .menu-bar li:first-child .dropdown {
+    min-width: 100%;
+  }
+
+  .menu-bar > li:not(:last-child) {
+    padding-bottom: 0.5rem;
+    border-bottom: var(--border);
+  }
+
+  .introduction-section {
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 10px;
+  }
+  .introduction-text {
+    width: 100% !important;
+  }
   
-        <div class="slideshow-container" id="index-carousel">
+  #index-carousel {
+    width: 100% !important;
+  }
 
-          <div class="mySlides fade">
-            <div class="numbertext">1 / 4</div>
-            <img class="gallery-picture" src="../assets/gallery/gallery1.jpeg" style="width:100%">
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext">2 / 4</div>
-            <img class="gallery-picture" src="../assets/gallery/gallery2.jpeg" style="width:100%">
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 4</div>
-            <img class="gallery-picture" src="../assets/gallery/gallery3.jpeg" style="width:100%">
-          </div>
+  .gallery-picture {
+    /* height: 200px !important; */
+    /* height: 100% !important; */
+    min-width: 90% !important;
+    /* max-width: 90% !important; */
+    /* min-height: 40vh !important;
+    max-height: 40vh !important; */
+  }
 
-          <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-            <img class="gallery-picture" src="../assets/gallery/gallery4.jpeg" style="width:100%">
-          </div>
-          
-          </div>
-      </div>      
-  </div>
+  .hk-clinic-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    /* display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(10, 1fr) !important;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px !important; */
+  }
 
-  <footer id="footer" aria-label="navigation bar">
-    <ul class="social-net">
-        <li><a href="https://www.facebook.com/TaiWoTong"><i class="fa fa-facebook" aria-hidden="true"></i></i>
-            </a></li>
-        <li><a href="https://www.instagram.com/TaiWoTong"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </li>
-    </ul>
-    <p class="footer-privacy-policy"><a href="../privacy-policy">私隱政策及免責聲明</a></p>
-    <p class="copyright">Copyright ©2024 泰和堂中醫診所. All rights reserved.</p>
-</footer>
+  .hk-clinic-grid > *:nth-child(2n){
+    margin-bottom: 80px;
+  }
+  
+  .uk-clinic-grid {    
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    /* display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px !important; */
+  } 
+
+  .header1-text {
+    width: 100% !important;
+  }
+
+  .clinic-picture{
+    /* max-height: 20rem; */
+    object-position: center;
+    object-fit: cover;
+    /* min-width: 100% !important;
+    max-width: 100% !important;
+    min-height: 30% !important;
+    max-height: 30% !important; */
+    display: block;
+    margin: auto;
+    width: inherit;
+  }
+
+  .uk-clinic-hyperlink-wrapper > * {
+    width: 170px;
+    text-align: center;
+  }
+
+  .uk-clinic-hyperlink-wrapper > * > * {
+    text-align: center;
+    display: block;
+  }
+}
+
+/* @media (max-width: 600px) {
+  .right-container {
+    display: none;
+  }
+} */
+
+.site-logo{
+	  width: auto;
+}
+
+.main-section{
+  padding: 1.2rem 3rem;
+  line-height: 2rem;
+  /* width: 100rem; */
+  width: inherit;
+  margin: auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1280px) {
+
+  .main-section {
+    max-width: calc(100% - 70px);
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+
+  .main-section {
+    max-width: calc(100% - 100px);
+    /* padding: 1.2rem 0 0 0; */
+    padding: 1.2rem 0 1.2rem 0;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  .main-section {
+    max-width: calc(100% - 40px);
+    /* padding: 1.2rem 0 0 0; */
+    padding: 1.2rem 0 1.2rem 0;
+  }
+
+}
+
+.introduction-section{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.introduction-text {
+  width: 50%;
+}
+
+#index-carousel {
+  /* width: 45%; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.section-container {
+  height: 15rem;
+}
+
+#section-image-contact-us {
+  background-image: url('../assets/WhatsApp-Image-2022-05-27-at-5.16.07-PM-1-e1653926031650.jpeg');
+}
+
+.section-image {
+  overflow: hidden;
+  background-position: 0 50%;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  position: relative;
+  background-repeat: no-repeat;
+  height: inherit;
+}
+
+.section-header {
+  position: relative;
+  font-size: 2.5rem;
+  color: white;
+  top: 40%;
+  left: 5%;
+  width: 100rem;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.super-header {
+  font-size: 2rem;
+  /* text-decoration: underline;
+  width: 80rem; */
+  margin: auto;
+  font-weight: 900;
+  line-height: 4rem;
+  color: var(--brownred);
+  border-left: 5px solid var(--brownred);
+  background: var(--lightbrownred);
+  padding-left: 1rem;
+}
+
+.header1-text {
+  font-size: 2rem;
+  text-decoration: underline;
+  /* width: 80rem; */
+  margin: auto;
+  font-weight: 900;
+  line-height: 4rem;
+  color: var(--brownred);
+}
+
+.header2-text {
+  font-size: 1.75rem;
+  color: var(--brownred);
+}
+
+.header3-text {
+  font-size: 1.75rem;
+  text-decoration: underline;
+  font-weight: 500;
+  line-height: 4rem;
+  color: var(--brownred);
+  margin-top: 2.5rem;
+}
+
+.header4-text {
+  font-size: 1.5rem;
+  line-height: 4rem;
+  color: var(--brownred);
+  margin-top: 2rem;
+}
+
+.brownred-text{
+  color: var(--brownred);
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.section-text {
+  font-size: 1.2rem;
+}
+
+.contact-us-details-marker{
+  padding-right: 28px;
+  padding-top: 7px;
+  width: 40px;
+}
+
+.clinic-picture-container{
+  justify-content: center;
+  display: inline-flex;
+}
+
+.clinic-picture{  
+  min-width: 20rem;
+  max-width: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
+  object-position: center;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  width: inherit;
+}
+
+.clinic-info{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+}
+
+.clinic-info-row{
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.clinic-info-row > * {
+  font-size: 1.2rem;
+}
+
+.hk-clinic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+  width: 90%;
+} 
+
+.uk-clinic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+  width: 90%;
+} 
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#footer{
+  padding-top: 35px;
+  padding-bottom: 30px;
+  /* background: #1f2024; */
+  background: var(--brownred);
+  text-align: center;
+}
+
+#footer ul {
+  list-style: none;
+  /* padding: 0; */
+  /* margin: 0 -7.5px; */
+}
+
+#footer ul > li {
+  display: inline-block;
+  margin: 0 7.5px;
+}
+
+#footer a {
+  color: #fff;
+}
+
+#footer a i {
+  color: var(--brownred);
+  background: #f1f1f1;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 32px;
+  box-shadow: 1px 1px 2px black;
+}
+
+#footer p.copyright {
+  color: #fff;
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+.footer-privacy-policy{
+  color: #fff;
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+/* .footer-privacy-policy > * {  
+  text-decoration: none;
+} */
+
+#back-to-top {
+  position: fixed;
+  z-index: 1000;
+  bottom: 20px;
+  right: 20px;
+}
+
+#back-to-top-icon {
+  background: var(--brownred);
+  display: block;
+  width: 40px;
+  height: 40px;
+  /* background: #1997d2; */
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+  line-height: 1.8;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px black;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.gallery-picture{
+  height: 400px;
+}
+
+.hk-clinic-hyperlink-wrapper{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hk-clinic-hyperlink-wrapper > * {
+  border: 3px solid var(--brownred);
+  border-radius: 10px;
+  padding: 0px 10px 0 10px;
+}
+
+.uk-clinic-hyperlink-wrapper{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uk-clinic-hyperlink-wrapper > * {
+  border: 3px solid var(--brownred);
+  border-radius: 10px;
+  padding: 0px 10px 0 10px;
+  width: 170px;
+  text-align: center;
+}
+
+.clinic-info-hyperlink-btn > * {
+  text-decoration: none;
+  color: var(--brownred);
+  font-size: 1.2rem;
+}
+
+.clinic-info-hyperlink-btn:hover {
+  background-color: var(--brownred);
+}
+
+.clinic-info-hyperlink-btn:hover > * {
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.iframe-calendar{
+  border: 0;
+  /* width: 50%; */
+  width: 100%;
+  height: 800px;
+  margin-top: 2rem;
+}
+
+.iframe-scheduling{
+  width: 100%;
+  height: 1150px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 1280px) {
+  .iframe-calendar {
+    /* width: 50%; */
+    width: 100%;
+  }
+  .iframe-scheduling{
+    height: 1150px !important;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .iframe-scheduling {
+    height: 1150px !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .iframe-scheduling {
+    height: 1200px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .iframe-scheduling {
+    height: 1250px !important;
+  }
+}
+
+.doctor-item-wrapper{
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
+}
+
+.about-doctor-img{
+  width: inherit;
+  display: block;
+  margin: auto;
+}
+
+.about-doctor-img-wrapper{
+  width: 50%;
+  margin: auto;
+}
+
+.about-doctor-text{
+  width: 50%;
+  display: block;
+  margin: auto;
+  padding-right: 2rem;
+}
+
+.about-doctor-text > ul {
+  list-style: initial;
+  padding-left: 15px;
+}
+
+.about-doctor-text > ul > li {
+  font-size: 1.2rem;
+}
+
+.about-doctor-text-description {
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+.about-doctor-text-description > p {
+  font-size: 1.2rem;
+}
+
+.news-and-articles-ul {
+  list-style: initial;
+  padding-left: 15px;
+}
+
+.news-link > a{
+  font-size: 1.2rem;
+}
+
+.news-and-articles-ul > li > * {
+  font-size: 1.2rem;
+}
+
+.doctor-name{
+  position: relative;
+}
+
+.doctor-name::after{
+  content: '';
+  width: 50%;
+  height: 4px;
+  background: var(--brownred);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+@media screen and (max-width: 980px) {
+
+  .doctor-item-wrapper {
+    flex-direction: column !important;
+  }
+  .about-doctor-img-wrapper{
+    width: 70% !important;
+  }
+  .about-doctor-img{
+    width: 100% !important;
+  }
+  .about-doctor-text{
+    padding-top: 1rem;
+    padding-right: 0 !important;
+    width: 70% !important;
+  }
+  .doctor-name::after{
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+
+  .doctor-item-wrapper {
+    flex-direction: column !important;
+  }
+  .about-doctor-img-wrapper{
+    width: 80% !important;
+  }
+  .about-doctor-img{
+    width: 100% !important;
+  }
+  .about-doctor-text{
+    padding-top: 1rem;
+    padding-right: 0 !important;
+    width: 80% !important;
+  }
+  .doctor-name::after{
+    width: 100% !important;
+  }
+}
+
+.main-section-text-wrapper{
+  width: 100%;
+}
+
+.hk-clinic-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.uk-clinic-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.about-clinic-text{
+  width: 50%;
+  display: block;
+  margin: auto;
+  padding-left: 2rem;
+}
+
+.index-about-clinic-text{
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding-left: 2rem;
+}
 
 
-    <button id="back-to-top" style="display: block;">
-        <div id="back-to-top-icon"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-    </button>
-    <script src="../JS/script.js"></script>
-</body>
+.clinic-name{
+  position: relative;
+  margin-bottom: 1.5rem;
+}
 
-</html>
+.clinic-name::after{
+  content: '';
+  width: 50%;
+  height: 4px;
+  background: var(--brownred);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+@media screen and (max-width: 980px) {
+
+  .about-clinic-text{
+    padding-top: 1rem;
+    width: 70% !important;
+    padding-left: 0 !important;
+  }
+
+  .clinic-name::after{
+    width: 100% !important;
+  }
+
+  .index-about-clinic-text{
+    padding-top: 1rem;
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+
+  .about-clinic-text{
+    padding-top: 1rem;
+    width: 70% !important;
+    padding-left: 0 !important;
+  }
+
+  .clinic-name::after{
+    width: 100% !important;
+  }
+
+  .index-about-clinic-text{
+    padding-top: 1rem;
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
+}
+
+.iframe-gmap{  
+  min-width: 15rem;
+  max-width: 15rem;
+  min-height: 15rem;
+  max-height: 15rem;
+  object-position: center;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  width: inherit;
+}
+
+@media (max-width: 1100px) {
+  .iframe-gmap{
+    object-position: center;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    width: inherit;
+  }
+}
+
+/* .index-clinic-container{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+} */
+
+.index-clinic-wrapper{
+  /* width: 45%; */
+  width: 100%;
+}
+
+.index-clinic-item-wrapper{
+  display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
+  border-radius: 20px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* padding: 2rem 0 2rem 0; */
+  margin: 2rem 0 2rem 0;
+  /* min-height: 540px; */
+}
+
+.index-clinic-map-wrapper{
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 980px) {
+
+  .index-clinic-wrapper{
+    width: 100% !important;
+  }
+
+  /* .index-clinic-item-wrapper {
+    flex-direction: column !important;
+    padding: 2rem !important;
+  } */
+
+  .index-clinic-map-wrapper{
+    width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+
+  .index-clinic-wrapper{
+    width: 100% !important;
+  }
+
+  /* .index-clinic-item-wrapper {
+    flex-direction: column !important;
+    padding: 2rem !important;
+  } */
+
+  .index-clinic-map-wrapper{
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .index-clinic-item-wrapper {
+    flex-direction: column !important;
+  }
+}
+
+.accordion {
+	background-color: #F8F8FF;
+	color: var(--brownred);
+	cursor: pointer;
+	padding: 9px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 1.5rem;
+	transition: 0.4s;
+}
+
+.accordion-active, .accordion:hover {
+	background-color: var(--brownred);
+  color: #F8F8FF;
+}
+
+.accordion:after {
+  content: '\002B';
+  /* color: var(--brownred); */
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion-active:after {
+  content: "\2212";
+  /* color: var(--brownred); */
+}
+
+.accordion-panel {
+	padding: 0 1rem 0 1rem;
+	display: none;
+	background-color: var(--snowwhite);
+	overflow: hidden;
+}
+
+.index-section {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+.index-left-container {
+  width: 60%;
+}
+
+.index-right-container {
+  width: 36%;
+  margin-left: auto;
+}
+
+
+@media (max-width: 1100px) {
+  .index-section {
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 3rem;
+  }
+  .index-left-container {
+    width: 100% !important;
+  }
+  .index-right-container {
+    width: 100% !important;
+    margin: 0 auto 0 auto !important;
+  }
+}
+
+.index-clinic-hyperlink-wrapper{
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.index-clinic-hyperlink-wrapper > * {
+  border: 3px solid var(--brownred);
+  border-radius: 1rem;
+  /* padding: 0px 1rem 0 1rem; */
+  width: 100%;
+}
+
+@media screen and (max-width: 980px) {
+  .index-clinic-hyperlink-wrapper {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .index-clinic-hyperlink-wrapper > * {
+    width: 100% !important;
+  }
+}
+
+.body-text {
+  font-size: 1.3rem;
+  margin: 1rem 0 1rem 0;
+  line-height: 2.5rem;
+}
+
+.privacy-policy-ol{
+  margin-left: 1.2rem;
+}
+
+#current-month-number{
+  position: relative;
+  font-size: 2.5rem;
+  color: white;
+  top: 40%;
+  left: 0%;
+  width: 100rem;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.booking-info-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-info-clinic-name{
+  width: 100%;
+  font-size: 2rem;
+}
+
+.booking-info-clinic-contact-wrapper{
+  display: flex;
+}
+
+.booking-info-row{
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.booking-info-row > * {
+  font-size: 1.3rem;
+}
+
+.contact-us-details-marker-booking{
+  padding-right: 1rem;
+  padding-top: 7px;
+  /* width: 1.5rem; */
+}
+
+.te-t, .te-s, .rb-ni {
+  font-size: 1rem;
+}
+
+.hk-clinic-calendar-wrapper {
+  padding-bottom: 5rem;
+}
+
+.calendar-img-wrapper{
+  width: 60%;
+  padding-top: 1.5rem;
+  margin: auto;
+}
+
+@media (max-width: 980px) {
+  .calendar-img-wrapper{width: 100% !important;}
+}
+
+.calendar-img{
+  width: 100%;
+}
